@@ -16,6 +16,15 @@ import {
   Monitor,
   Plus,
 } from "lucide-react";
+export const dynamic = "force-dynamic";
+
+function todayLabel(){
+  return new Intl.DateTimeFormat("en-US", {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+  }).format(new Date());
+}
 
 type ActivityRow = {
   icon: React.ReactNode;
@@ -62,7 +71,7 @@ export default function HomePage() {
     <AppShell>
       <Hero
         title="Good morning, Tuqa"
-        description="Rihal · Wednesday, 22 July — 4 bookings today, 3 approvals waiting."
+        description={`Rihal · ${todayLabel()} — 4 bookings today, 3 approvals waiting.`}
         actions={
           <>
             <Button href="/tickets/new" variant="secondary" icon={<Wrench size={16} />}>
