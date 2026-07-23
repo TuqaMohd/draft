@@ -27,10 +27,8 @@ export default function Footer() {
         </div>
         <div>
           <h5 className="mb-1.5 font-mono font-extrabold text-xs uppercase tracking-[0.06em] text-text-2">Support</h5>
-          <a href="/tickets/new" className="mb-2.5 block text-[13px] text-text no-underline">Submit a ticket</a>
-          <a href="/approval-rules" className="mb-2.5 block text-[13px] text-text no-underline">Approval rules</a>
-          <a href="/tickets/new" className="mb-2.5 block text-[13px] text-text no-underline">Report an asset issue</a>
-          <a href="/contact" className="mb-2.5 block text-[13px] text-text no-underline">Contact IT Support</a>
+          <a href="/tickets/new" className="mb-2.5 block text-[13px] text-text no-underline">Submit a report ticket</a>
+          <a href="/approval-rules" className="mb-2.5 block text-[13px] text-text no-underline">Approval rules</a>          <a href="/contact" className="mb-2.5 block text-[13px] text-text no-underline">Contact IT Support</a>
         </div>
         <div>
           <h5 className="mb-1.5 font-mono font-extrabold text-xs uppercase tracking-[0.06em] text-text-2">Group</h5>
