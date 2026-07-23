@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root,
+:root[data-theme="dark"] {
+  --bg: #0a0c10;
+  --canvas: #10141b;
+  --s1: #161b24;
+  --s2: #0d1015;
+  --s3: #2a3140;
+  --border: #232a35;
+  --border-strong: #3a4353;
+  --text: #edf0f5;
+  --text-2: #a3acba;
+  --text-3: #6b7482;
+  --accent: #2dd4bf;
+  --accent-deep: #113b36;
+  --accent-ink: #04211d;
+  --accent-fg: #8febc8;
+  --amber: #f0b84e;
+  --amber-deep: #3d2c10;
+  --amber-fg: #f3ce85;
+  --coral: #f2726a;
+  --coral-deep: #3a1a17;
+  --coral-fg: #f2a79e;
+  --violet: #a48cf2;
+  --violet-deep: #241f3d;
+  --violet-fg: #c9c2f5;
+  --overlay: rgb(0 0 0 / 0.5);
+  --shadow-color: 0deg 0% 0%;
+  --brand-primary: #1e40af;
+  --brand-accent: #3b82f6;
+}
+
+:root[data-theme="obsidian"] {
+  --bg: #07040d;
+  --canvas: #0b0714;
+  --s1: #150c26;
+  --s2: #0d0817;
+  --s3: #2b1b47;
+  --border: #2a1f42;
+  --border-strong: #4a3468;
+  --text: #f1edf9;
+  --text-2: #b3a4cf;
+  --text-3: #7c6d97;
+  --accent: #a48cf2;
+  --accent-deep: #241f3d;
+  --accent-ink: #14102b;
+  --accent-fg: #c9c2f5;
+  --amber: #f0b84e;
+  --amber-deep: #3d2c10;
+  --amber-fg: #f3ce85;
+  --coral: #f2726a;
+  --coral-deep: #3a1a17;
+  --coral-fg: #f2a79e;
+  --violet: #c9a8ff;
+  --violet-deep: #2c1f4d;
+  --violet-fg: #ded0ff;
+  --overlay: rgb(5 2 12 / 0.6);
+  --shadow-color: 265deg 60% 8%;
+  --brand-primary: #1e40af;
+  --brand-accent: #3b82f6;
+}
+
+:root[data-theme="light"] {
+  --bg: #f5f6f8;
+  --canvas: #ffffff;
+  --s1: #ffffff;
+  --s2: #f2f3f5;
+  --s3: #e7e9ed;
+  --border: #e2e4e9;
+  --border-strong: #cbcfd8;
+  --text: #14161a;
+  --text-2: #565d6b;
+  --text-3: #8a909c;
+  --accent: #0f9d8f;
+  --accent-deep: #d9f5ef;
+  --accent-ink: #06322c;
+  --accent-fg: #0c6b5f;
+  --amber: #b8720f;
+  --amber-deep: #fbeed4;
+  --amber-fg: #8a5709;
+  --coral: #d84f45;
+  --coral-deep: #fbe3e1;
+  --coral-fg: #a83a31;
+  --violet: #7c5cf0;
+  --violet-deep: #ece7fd;
+  --violet-fg: #5b3fc4;
+  --overlay: rgb(15 17 21 / 0.4);
+  --shadow-color: 220deg 30% 40%;
+  --brand-primary: #1e3a8a;
+  --brand-accent: #2563eb;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+* {
+  border-color: var(--border);
+}
+
+body {
+  color-scheme: light dark;
+}
+
+/* One consistent focus treatment for buttons, links, and other tabbable
+   elements. Form fields (input/textarea/select) opt out here and get
+   their own explicit brand-accent ring — see the shared field classes
+   in lib/styles.ts — instead of this generic glow. */
+a[href],
+button,
+input[type="checkbox"],
+input[type="radio"],
+input[type="range"],
+input[type="file"],
+[tabindex] {
+  box-shadow: 0 0 0 0 var(--accent-deep), 0 0 0 0 var(--accent);
+  transition: box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+a[href]:focus-visible,
+button:focus-visible,
+input[type="checkbox"]:focus-visible,
+input[type="radio"]:focus-visible,
+input[type="range"]:focus-visible,
+input[type="file"]:focus-visible,
+[tabindex]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--accent-deep), 0 0 0 1.5px var(--accent);
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: none;
+}
+
+[data-theme="obsidian"] body {
+  background: linear-gradient(135deg, #05030a, #170b2c, #05030a, #22103f, #05030a);
+  background-size: 400% 400%;
+  animation: obsidian-drift 22s ease infinite;
+}
+
+@keyframes obsidian-drift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes hero-blob-drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(18px, -14px) scale(1.08);
+  }
+}
+
+.skip-link {
+  position: fixed;
+  top: -100%;
+  left: 1rem;
+  z-index: 100;
+  background: var(--s1);
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
