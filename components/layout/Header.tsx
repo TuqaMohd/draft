@@ -93,7 +93,7 @@ export default function Header() {
   }
 
   return (
-    <header className="flex h-16 shrink-0 items-center justify-between gap-5 border-b border-border bg-s1 px-7">
+    <header className="flex h-16 shrink-0 items-center justify-between gap-5 border-b border-border bg-s1 px-7 max-[860px]:px-5 max-[480px]:px-4">
       <div className="flex min-w-0 items-center gap-6">
         <Link href="/" className="flex items-center gap-2.5 text-text no-underline" aria-label="Amanah — go to homepage">
           <Image src="/amanah.jpg" alt="" width={22} height={26} className="rounded-[5px]" />
@@ -153,6 +153,7 @@ export default function Header() {
           onSubmit={handleSearch}
           placeholder="Type to search..."
           ariaLabel="Type to search..."
+          enableShortcut
         />
 
         {searchOpen && query.trim() && (
@@ -216,7 +217,7 @@ export default function Header() {
           className="ml-1 flex h-8 w-8 items-center justify-center rounded-full bg-violet-deep font-head text-[12px] font-semibold text-violet-fg"
           aria-label="Signed in user"
         >
-          user
+          TM
         </div>
       </div>
     </header>

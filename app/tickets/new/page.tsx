@@ -23,7 +23,7 @@ export default function NewTicketPage() {
   const [severity, setSeverity] = useState("low");
 
   return (
-    <AppShell contentClassName="flex-1 bg-s2 px-8 py-9">
+    <AppShell contentClassName="flex-1 bg-s2 px-8 py-9 max-[640px]:px-4 max-[640px]:py-5">
       <div className="mx-auto max-w-[640px]">
         <PageHeader
           eyebrow="IT support · new ticket"
@@ -32,7 +32,7 @@ export default function NewTicketPage() {
           description="Linking a ticket to an asset automatically moves it into maintenance until the ticket is resolved."
         />
 
-        <Card className="px-[30px] py-7">
+        <Card className="px-[1.875rem] py-7 max-[640px]:px-4 max-[640px]:py-5">
           <div className="mb-[18px]">
             <label className="mb-[7px] block text-[12.5px] font-medium text-text-2">Asset</label>
             <div className="flex items-center gap-3 rounded-md border border-border bg-s2 px-3 py-2.5">

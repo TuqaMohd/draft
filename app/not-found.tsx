@@ -4,7 +4,7 @@ import Button from "@/components/ui/Button";
 
 export default function NotFound() {
   return (
-    <AppShell contentClassName="flex flex-1 items-center justify-center px-8 py-7">
+    <AppShell contentClassName="flex flex-1 items-center justify-center px-5 py-7 max-[480px]:px-4">
       <div className="max-w-[420px] text-center">
         <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-s3 text-text-2">
           <Compass size={26} />

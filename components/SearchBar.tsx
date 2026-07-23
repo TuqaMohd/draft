@@ -14,6 +14,8 @@ type SearchBarProps = {
   placeholder?: string;
   ariaLabel?: string;
   className?: string;
+  /** Show the ⌘K hint and bind the global ⌘K/Ctrl+K shortcut to this field. Defaults to false — only the primary/global search bar should set this to true. */
+  enableShortcut?: boolean;
 };
 
 export default function SearchBar({
@@ -25,11 +27,15 @@ export default function SearchBar({
   placeholder = "Search…",
   ariaLabel,
   className,
+  enableShortcut = false,
 }: SearchBarProps) {
   const inputRef = useRef<HTMLInputElement>(null);
 
   // ⌘K / Ctrl+K jumps straight into the search field from anywhere.
+  // Only wired up when explicitly enabled, so secondary search fields
+  // (e.g. the catalog's "Filter catalog…" box) don't fight over the shortcut.
   useEffect(() => {
+    if (!enableShortcut) return;
     function onKey(e: KeyboardEvent) {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
         e.preventDefault();
@@ -38,7 +44,7 @@ export default function SearchBar({
     }
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
-  }, []);
+  }, [enableShortcut]);
 
   return (
     <form
@@ -71,14 +77,14 @@ export default function SearchBar({
         >
           <X size={14} />
         </button>
-      ) : (
+      ) : enableShortcut ? (
         <kbd
           aria-hidden="true"
           className="hidden shrink-0 select-none items-center rounded border border-border bg-s1 px-1.5 py-0.5 font-mono text-[10.5px] text-text-3 sm:flex"
         >
           ⌘K
         </kbd>
-      )}
+      ) : null}
     </form>
   );
 }

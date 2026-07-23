@@ -61,7 +61,7 @@ export default function HomePage() {
   return (
     <AppShell>
       <Hero
-        title="Good morning, person"
+        title="Good morning, Tuqa"
         description="Rihal · Wednesday, 22 July — 4 bookings today, 3 approvals waiting."
         actions={
           <>

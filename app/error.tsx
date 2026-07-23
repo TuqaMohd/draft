@@ -12,7 +12,7 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
   }, [error]);
 
   return (
-    <AppShell contentClassName="flex flex-1 items-center justify-center px-8 py-7">
+    <AppShell contentClassName="flex flex-1 items-center justify-center px-5 py-7 max-[480px]:px-4">
       <ErrorState
         title="This page failed to load"
         description="Something went wrong loading this screen. You can try again, or contact IT if it keeps happening."

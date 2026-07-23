@@ -194,7 +194,10 @@ function CatalogContent() {
   );
 
   return (
-    <AppShell sidebar={<div className="shrink-0 max-[860px]:hidden">{filterPanel}</div>} contentClassName="flex-1 px-[26px] py-[22px]">
+    <AppShell
+      sidebar={<div className="shrink-0 max-[860px]:hidden">{filterPanel}</div>}
+      contentClassName="flex-1 px-[1.625rem] py-[1.375rem] max-[860px]:px-4 max-[860px]:py-4"
+    >
       <div className="mb-4 flex flex-wrap items-center justify-between gap-4">
         <div>
           <h1 className="m-0 font-head text-[19px] font-semibold">Asset catalog</h1>

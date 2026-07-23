@@ -3,7 +3,7 @@ import { Skeleton } from "@/components/ui/Skeleton";
 
 export default function Loading() {
   return (
-    <AppShell contentClassName="flex-1 px-[26px] py-[22px]">
+    <AppShell contentClassName="flex-1 px-[1.625rem] py-[1.375rem] max-[860px]:px-4 max-[860px]:py-4">
       <div className="mb-4 flex items-center justify-between gap-4">
         <div>
           <Skeleton className="h-5 w-40" />

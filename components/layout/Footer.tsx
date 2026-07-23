@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border bg-s1 px-10 pb-[26px] pt-7">
-      <div className="grid gap-8 pb-[26px] [grid-template-columns:1.4fr_repeat(3,1fr)] max-[700px]:[grid-template-columns:1fr_1fr]">
+    <footer className="border-t border-border bg-s1 px-10 pb-[26px] pt-7 max-[700px]:px-5 max-[480px]:px-4">
+      <div className="grid gap-8 pb-[26px] [grid-template-columns:1.4fr_repeat(3,1fr)] max-[700px]:gap-5 max-[700px]:[grid-template-columns:1fr_1fr]">
         <div>
           <Link
             href="/"
@@ -17,6 +17,7 @@ export default function Footer() {
           <p className="m-0 max-w-[220px] text-[12.5px] leading-[1.7] text-text-2">
             The Group Operations Platform for shared assets across Rihal, Transformers Pioneers and Codeline.
           </p>
+          
         </div>
         <div>
           <h5 className="mb-1.5 font-mono font-extrabold text-xs uppercase tracking-[0.06em] text-text-2">Platform</h5>

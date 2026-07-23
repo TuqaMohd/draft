@@ -8,13 +8,8 @@ import PageTransition from "@/components/motion/PageTransition";
 
 type AppShellProps = {
   children: ReactNode;
-  /**
-   * - omitted → the default primary Sidebar is shown (most pages)
-   * - a node → replaces the sidebar with a custom panel (e.g. catalog's filters)
-   * - null → no left panel at all, content spans full width (e.g. forms)
-   */
+
   sidebar?: ReactNode | null;
-  /** Overrides the default content padding, e.g. for full-bleed or centered form layouts. */
   contentClassName?: string;
 };
 
@@ -27,7 +22,7 @@ export default function AppShell({ children, sidebar, contentClassName }: AppShe
       <Header />
       <div className="flex flex-1">
         {sidebarNode}
-        <main id="main-content" className={contentClassName ?? "flex-1 px-8 py-7"}>
+        <main id="main-content" className={contentClassName ?? "flex-1 px-8 py-7 max-[860px]:px-5 max-[480px]:px-4 max-[480px]:py-4"}>
           <PageTransition>{children}</PageTransition>
         </main>
       </div>
