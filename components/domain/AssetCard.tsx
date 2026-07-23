@@ -35,10 +35,7 @@ export default function AssetCard({
       whileHover={{ y: -2 }}
       transition={{ duration: duration.fast, ease: ease.out }}
       className="group relative rounded-lg border border-border border-t-2 border-t-border-strong/50 bg-s1 p-4 transition-colors duration-150
-      hover:border-border-strong hover:shadow-md
-      after:absolute after:right-0 after:top-4 after:h-3 after:w-3 after:translate-x-1/2
-      after:rounded-full after:border after:border-border after:bg-canvas after:content-['']
-      after:transition-colors after:duration-150 group-hover:after:border-border-strong"
+      hover:border-border-strong hover:shadow-md"
     >
       <div className="mb-3.5 flex items-start justify-between">
         <div className="flex h-[38px] w-[38px] items-center justify-center rounded-[7px] bg-s3 text-text-2 transition-transform duration-300 group-hover:rotate-3">
